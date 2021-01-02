@@ -1,18 +1,5 @@
 from PySide6 import QtWidgets
-from qt_bootstrap.buttons import (
-        QBSPrimaryButton, 
-        QBSDangerButton, 
-        QBSSecondaryButton, 
-        QBSLightButton, 
-        QBSDarkButton, 
-        QBSSuccessButton, 
-        QBSWarningButton, 
-        QBSInfoButton
-)
-from qt_bootstrap.lineedit import QBSLineEdit
-from qt_bootstrap.textedit import QBSTextEdit
-from qt_bootstrap.combobox import QBSComboBox
-from qt_bootstrap.progressbar import QBSProgressBar
+from qt_bootstrap import *
 
 import sys
 
@@ -27,22 +14,21 @@ class MainWindow(QtWidgets.QWidget):
         layout = QtWidgets.QVBoxLayout()
         self.setStyleSheet('QWidget { background-color: %s; }' % BACKGROUND_COLOR)
 
-        primary_btn = QBSPrimaryButton(btn_text='PRIMARY')
-        danger_btn = QBSDangerButton(btn_text='DANGER')
-        secondary_btn = QBSSecondaryButton(btn_text='SECONDARY')
-        light_btn = QBSLightButton(btn_text='LIGHT')
-        dark_btn = QBSDarkButton(btn_text='DARK')
-        success_btn = QBSSuccessButton(btn_text='SUCCESS')
-        warning_btn = QBSWarningButton(btn_text='WARNING')
-        info_btn = QBSInfoButton(btn_text='INFO')
+        primary_btn = QBSPrimaryButton('PRIMARY')
+        danger_btn = QBSDangerButton('DANGER')
+        secondary_btn = QBSSecondaryButton('SECONDARY')
+        light_btn = QBSLightButton('LIGHT')
+        dark_btn = QBSDarkButton('DARK')
+        success_btn = QBSSuccessButton('SUCCESS')
+        warning_btn = QBSWarningButton('WARNING')
+        info_btn = QBSInfoButton('INFO')
 
-        line_edit = QBSLineEdit(placeholder='This is a placeholder.')
-
-        text_edit = QBSTextEdit(placeholder='This is a placeholder.')
+        line_edit = QBSLineEdit()
+        text_edit = QBSTextEdit()
 
         combobox = QBSComboBox()
-        combobox.addItem('Cats')
-        combobox.addItem('Dogs')
+        combobox.addItem('Item 1')
+        combobox.addItem('Item 2')
 
         progress_bar = QBSProgressBar()
         progress_bar.setValue(25)
